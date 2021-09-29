@@ -17,6 +17,7 @@ def is_prime(n):
 
   # no divisor was found, so the number must be a prime
   return True
+
 '''
 Returns the product of the numbers in list 'lst'.
 '''
@@ -42,7 +43,6 @@ def get_cmmdc_v1(x, y):
   else:
     return get_cmmdc_v1(x, y - x)
 
-  
 '''
 Returns the GCD of two numbers x annd y using Euclid's division-based algorithm.
 '''
@@ -54,6 +54,9 @@ def get_cmmdc_v2(x, y):
   # if x is non-zero, then the GCD can be computed recursively as the GCD of the numbers (y MOD x) and x
   return get_cmmdc_v2(y % x, x)
 
+'''
+GUI for testing the is_prime function. Reads an integer and displays whether it is a prime or not.
+'''
 def gui_primality_tester():
   n = int(input("Input the integer whose primality you want tested: "))
   if is_prime(n):
@@ -61,6 +64,9 @@ def gui_primality_tester():
   else:
     print("The number is NOT a prime.")
 
+'''
+GUI for testing the get_product function. Reads a list and then displays the product of its elements.
+'''
 def gui_list_product():
   # Read the length of the list
   n = int(input("Input the length of the list: "))
@@ -74,6 +80,10 @@ def gui_list_product():
   list_product = get_product(lst)
   print("The product of the elements in the list is: " + str(list_product))
 
+'''
+GUI for testing the get_cmmdc_v1 function. Reads two integers and outputs their GCD computed via the get_cmmdc_v1 
+function.
+'''
 def gui_gcd_v1():
   first_number = int(input("Input the first number: "))
   second_number = int(input("Input the second number: "))
@@ -81,6 +91,10 @@ def gui_gcd_v1():
   gcd = get_cmmdc_v1(first_number, second_number)
   print("The GCD of the two numbers is: " + str(gcd))
 
+'''
+GUI for testing the get_cmmdc_v2 function. Reads two integers and outputs their GCD computed via the get_cmmdc_v2 
+function.
+'''
 def gui_gcd_v2():
   first_number = int(input("Input the first number: "))
   second_number = int(input("Input the second number: "))
@@ -89,7 +103,8 @@ def gui_gcd_v2():
   print("The GCD of the two numbers is: " + str(gcd))
   
 def main():
-  # interfata de tip consola aici
+
+  # Display available menu options.
   print("""
     1. Primality Tester
     2. Product of the numbers in a list
@@ -99,6 +114,7 @@ def main():
     0. Exit
   """)
 
+  # As long as option 0 (exit) is not chosen, ask for a new command after completing the previous.
   while(True):
     choice = int(input("Command: "))
 
