@@ -28,10 +28,20 @@ def get_product(lst):
   return product
  
 '''
-Returns the GCD of two numbers x and y using the first algorithm.
+Returns the GCD of two numbers x and y using Euclid's subtraction-based algorithm.
 '''
 def get_cmmdc_v1(x, y):
-  # your code here
+  # if the two numbers are the same, their GCD is their common value
+  if x == y:
+    return x
+
+  # if the two numbers are distinct, we call recursively, changing only the
+  # largest's value by subtracting the lower one from it
+  if x > y:
+    return get_cmmdc_v1(x - y, y)
+  else:
+    return get_cmmdc_v1(x, y - x)
+
   pass
   
 '''
@@ -62,7 +72,11 @@ def gui_list_product():
   print("The product of the elements in the list is: " + str(list_product))
 
 def gui_gcd_v1():
-  pass
+  first_number = int(input("Input the first number: "))
+  second_number = int(input("Input the second number: "))
+
+  gcd = get_cmmdc_v1(first_number, second_number)
+  print("The GCD of the two numbers is: " + str(gcd))
 
 def gui_gcd_v2():
   pass
