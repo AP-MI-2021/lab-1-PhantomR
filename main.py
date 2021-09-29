@@ -21,8 +21,11 @@ def is_prime(n):
 Returns the product of the numbers in list 'lst'.
 '''
 def get_product(lst):
-  # your code here
-  pass
+  product = 1
+  for element in lst:
+    product *= element
+
+  return product
  
 '''
 Returns the GCD of two numbers x and y using the first algorithm.
@@ -46,8 +49,17 @@ def gui_primality_tester():
     print("The number is NOT a prime.")
 
 def gui_list_product():
-  pass
+  # Read the length of the list
+  n = int(input("Input the length of the list: "))
+  lst = []
 
+  # Read an integer and add it to the list at each step
+  for i in range(0, n):
+    element = int(input("list[" + str(i) + "] = "))
+    lst.append(element)
+
+  list_product = get_product(lst)
+  print("The product of the elements in the list is: " + str(list_product))
 
 def gui_gcd_v1():
   pass
