@@ -2,8 +2,21 @@
 Returns True if n is a prime, False otherwise.
 '''
 def is_prime(n):
-  # your code here
-  pass
+  # 0 and 1 are not primes, by definition
+  if (n == 0) or (n == 1):
+    return False
+
+  # 2 is a prime
+  if (n == 2):
+    return True
+
+  # for numbers > 2, we can start checking divisors from 2 up to number / 2 (inclusive because of number 4)
+  for d in range(2, (n // 2) + 1 , 2):
+    if n % d == 0:
+      return False
+
+  # no divisor was found, so the number must be a prime
+  return True
 '''
 Returns the product of the numbers in list 'lst'.
 '''
@@ -26,7 +39,11 @@ def get_cmmdc_v2(x, y):
   pass
 
 def gui_primality_tester():
-  pass
+  n = int(input("Input the integer whose primality you want tested: "))
+  if is_prime(n):
+    print("The number is a prime.")
+  else:
+    print("The number is NOT a prime.")
 
 def gui_list_product():
   pass
