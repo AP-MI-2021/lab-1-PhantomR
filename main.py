@@ -1,34 +1,70 @@
 '''
-Returneaza true daca n este prim si false daca nu.
+Returns True if n is a prime, False otherwise.
 '''
 def is_prime(n):
-  # codul vostru aici
+  # your code here
   pass
-  
 '''
-Returneaza produsul numerelor din lista lst.
+Returns the product of the numbers in list 'lst'.
 '''
 def get_product(lst):
-  # codul vostru aici
-  pass 
+  # your code here
+  pass
  
 '''
-Returneaza CMMDC a doua numere x si y folosind primul algoritm.
+Returns the GCD of two numbers x and y using the first algorithm.
 '''
 def get_cmmdc_v1(x, y):
-  # codul vostru aici
+  # your code here
   pass
   
 '''
-Returneaza CMMDC a doua numere x si y folosind al doilea algoritm.
+Returns the GCD of two numbers x annd y using the second algorithm.
 '''
 def get_cmmdc_v2(x, y):
-  # codul vostru aici
+  # your code here
+  pass
+
+def gui_primality_tester():
+  pass
+
+def gui_list_product():
+  pass
+
+
+def gui_gcd_v1():
+  pass
+
+def gui_gcd_v2():
   pass
   
 def main():
   # interfata de tip consola aici
-  print("text")
+  print("""
+    1. Primality Tester
+    2. Product of the numbers in a list
+    3. GCD v1
+    4. GCD v2
+    -----------------------------------
+    0. Exit
+  """)
+
+  while(True):
+    choice = int(input("Comanda: "))
+    if choice == 0:
+      print("Good bye.")
+    elif choice == 1:
+      gui_primality_tester()
+    elif choice == 2:
+      gui_list_product()
+    elif choice == 3:
+      gui_gcd_v1()
+    elif choice == 4:
+      gui_gcd_v2()
+    else:
+      print("Invalid command :). Please try again.")
+
+    print()
 
 if __name__ == '__main__':
   main()
