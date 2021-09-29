@@ -42,14 +42,17 @@ def get_cmmdc_v1(x, y):
   else:
     return get_cmmdc_v1(x, y - x)
 
-  pass
   
 '''
-Returns the GCD of two numbers x annd y using the second algorithm.
+Returns the GCD of two numbers x annd y using Euclid's division-based algorithm.
 '''
 def get_cmmdc_v2(x, y):
-  # your code here
-  pass
+  # if x is 0, then the GCD of the two is y
+  if x == 0:
+    return y
+
+  # if x is non-zero, then the GCD can be computed recursively as the GCD of the numbers (y MOD x) and x
+  return get_cmmdc_v2(y % x, x)
 
 def gui_primality_tester():
   n = int(input("Input the integer whose primality you want tested: "))
@@ -79,7 +82,11 @@ def gui_gcd_v1():
   print("The GCD of the two numbers is: " + str(gcd))
 
 def gui_gcd_v2():
-  pass
+  first_number = int(input("Input the first number: "))
+  second_number = int(input("Input the second number: "))
+
+  gcd = get_cmmdc_v2(first_number, second_number)
+  print("The GCD of the two numbers is: " + str(gcd))
   
 def main():
   # interfata de tip consola aici
@@ -93,9 +100,11 @@ def main():
   """)
 
   while(True):
-    choice = int(input("Comanda: "))
+    choice = int(input("Command: "))
+
     if choice == 0:
       print("Good bye.")
+      break
     elif choice == 1:
       gui_primality_tester()
     elif choice == 2:
